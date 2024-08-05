@@ -2,7 +2,7 @@ import uiautomator2 as u2
 import time
 
 # 连接到设备
-device = u2.connect()
+device = u2.connect("192.168.0.231")
 
 # 获取当前界面信息
 for i in range(1,5):
@@ -49,7 +49,10 @@ for i in range(1,5):
     # 浏览李宁旗舰店
     if device(text="浏览李宁旗舰店").exists:
         print("浏览李宁旗舰店")
-        device(text="去浏览").click()
+        if device(text="去浏览").exists:
+            device(text="去浏览").click()
+        if device(text="去完成").exists:
+            device(text="去完成").click()
         time.sleep(15)
         device.press("back")
         time.sleep(5)
@@ -132,7 +135,7 @@ for i in range(1,5):
                 device(text="暂停走路").click()
         time.sleep(2)
         device.press("back")
-        time.sleep(2)
+        time.sleep(3)
         device.click(x, y)
         time.sleep(5)
         if device(text="去领取").exists:
