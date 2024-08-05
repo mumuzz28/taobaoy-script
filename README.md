@@ -1,3 +1,3 @@
-# taobaoy-script
+# taobaoy-script  淘宝活动
 淘宝活动
 只适配了小米13的，还不是很完善，其他的机型可以自己修改一下。
